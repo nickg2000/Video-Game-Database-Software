@@ -1,0 +1,67 @@
+.App {
+    height: 100vh;
+    padding: 0px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .videogames {
+    display: flex;
+  }
+  
+  .videogame {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-container {
+    margin-top: 10px;
+  }
+  
+  img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    background-color: aqua;
+    margin: 10px;
+  }
+
+  .delete{
+    border: none;
+    padding: 3px 6px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .update{
+    /* Button styling */
+    border: none;
+    padding: 3px 6px;
+    background-color: white;
+    cursor: pointer;
+     /* Your button styling */
+     /* Remove underline */
+    text-decoration: none;
+     /* Remove blue font color */
+    color: inherit;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Add this line to center the form horizontally */
+    justify-content: center; /* Add this line to center the form vertically */
+  }
+
+  input {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid gray;
+  }
+
+  
