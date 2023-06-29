@@ -9,7 +9,8 @@ const Registration = () => {
         email: '',
         username: '',
         password: '',
-        phoneNumber: ''
+        phoneNumber: '',
+        reEnterPassword: ''
     });
 
     const navigate = useNavigate();
@@ -36,7 +37,18 @@ const Registration = () => {
             <input type='text' placeholder='Last name' onChange={handleChange} name="lastName" />
             <input type='email' placeholder='Email' onChange={handleChange} name="email" />
             <input type='text' placeholder='Username' onChange={handleChange} name="username" />
-            <input type='password' placeholder='Password' onChange={handleChange} name="password" />
+            <input
+                 type="password"
+                placeholder="Password"
+                onChange={handleChange}
+                name="password"
+            />
+                <input
+                 type="password"
+                 placeholder="Re-enter Password"
+                onChange={handleChange}
+                name="reEnterPassword"
+            />
             <input type='tel' placeholder='Phone Number' onChange={handleChange} name="phoneNumber" />
             <button onClick={handleClick}>Submit</button>
     </div>
