@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
 const Registration = () => {
-    const [videogame, setVideogame] = useState({
+
+    const [inputs, setInputs] = useState({
         firstName: '',
         lastName: '',
         email: '',
@@ -13,22 +14,28 @@ const Registration = () => {
         reEnterPassword: ''
     });
 
+    const [errorMessage, setErrorMessage] = useState(false);
+
     const navigate = useNavigate();
 
     const handleChange = (e) => {
-        setVideogame((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+        setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
-    const handleClick = async (e) => {
-        e.preventDefault();
+    const handleClick = async (e) => { //handles the submit button
+        e.preventDefault(); //prevents the default form submission behavior, which would cause the page to refresh.
         try {
-            await axios.post("http://localhost:8800/videogames", videogame);
-            // Handle successful submission (e.g., redirect, display success message)
-            navigate("/");
-        } catch (err) {
-            console.log(err);
-        }
-    };
+          // Make the API request to register the user
+      await axios.post("http://localhost:8800/backend/auth/register", inputs);
+      navigate("/");
+
+          
+        } catch (errorMessage) {
+           setErrorMessage(errorMessage.response.data);
+            }
+          };
+
+    
 
   return (
     <div className='form'>
@@ -51,6 +58,7 @@ const Registration = () => {
             />
             <input type='tel' placeholder='Phone Number' onChange={handleChange} name="phoneNumber" />
             <button onClick={handleClick}>Submit</button>
+            {errorMessage && errorMessage}
     </div>
   );
 }

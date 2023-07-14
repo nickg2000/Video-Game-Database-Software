@@ -55,7 +55,7 @@ const Videogames = () => {
           ))}
         </div>
         <button>
-          <Link to="/add">Add new video game</Link>
+          <Link to="/add"> Insert new video game</Link>
         </button>
       </div>
     );
