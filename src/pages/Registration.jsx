@@ -22,8 +22,8 @@ const Registration = () => {
         setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
-    const handleClick = async (e) => {
-        e.preventDefault();
+    const handleClick = async (e) => { //handles the submit button
+        e.preventDefault(); //prevents the default form submission behavior, which would cause the page to refresh.
         try {
           // Make the API request to register the user
       await axios.post("http://localhost:8800/backend/auth/register", inputs);
