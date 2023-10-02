@@ -54,7 +54,7 @@ const Videogames = () => {
         </>
       )}
   
-      <h1>Welcome to the Online Video Game Database!</h1>
+      <h1 className="textColorBlue" >Welcome to the Online Video Game Database!</h1>
       <div className="videogames">
         {videogames.map((videogame) => (
           <div className="videogame" key={videogame.id}>
